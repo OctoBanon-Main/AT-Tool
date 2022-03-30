@@ -177,22 +177,23 @@ echo [3] - Add Copy path to context menu
 echo [4] - Disable News and Interests
 echo [5] - Enable News and Interests
 echo [6] - Disable telemetry (powershell script!!)
-echo [7] - Disable defender (Safe mode. Maybe works on 1903+)
-echo [8] - Disable Office telemetry
-echo [9] - Disable Office telemetry (tasks)
-echo [10] - Enable GPEDIT (for Windows 10 Home)
-echo [11] - Onedrive uninstaller
-echo [12] - Remove 3D Objects (64-bit) (Thanks CreeperLifeYT#1267)
-echo [13] - Add Takeowner ship to context menu
-echo [14] - Activate Windows old photo viewer
-echo [15] - Disable Windows Update
-echo [16] - Enable Windows Update
-echo [17] - Disable firewall notify
-echo [18] - Enable firewall notify
-echo [19] - Disable Web Search
-echo [20] - Enable Web Search
-echo [21] - Remove all folder from This PC (Downloads and etc)
-echo [22] - Exit
+echo [7] - Disable Office telemetry
+echo [8] - Disable Office telemetry (tasks)
+echo [9] - Enable GPEDIT (for Windows 10 Home)
+echo [10] - Onedrive uninstaller
+echo [11] - Remove 3D Objects (64-bit) (Thanks CreeperLifeYT#1267)
+echo [12] - Add Takeowner ship to context menu
+echo [13] - Activate Windows old photo viewer
+echo [14] - Disable Windows Update
+echo [15] - Enable Windows Update
+echo [16] - Disable firewall notify
+echo [17] - Enable firewall notify
+echo [18] - Disable Web Search
+echo [19] - Enable Web Search
+echo [20] - Disable Windows Defender
+echo [21] - Enable Windows Defender
+echo [22] - Remove all folder from This PC (Downloads and etc)
+echo [23] - Exit
 echo.
 set /p inp=">>> "
 if "%inp%"=="1" (
@@ -220,59 +221,61 @@ if "%inp%"=="1" (
     ping -n 3 127.0.0.1 >NUL
     goto start
 ) else if "%inp%"=="7" (
-    start files\10\DisableDefenderSafeMode1903Plus.bat
-    ping -n 3 127.0.0.1 >NUL
-    goto start
-) else if "%inp%"=="8" (
     start files\10\DisableOfficeTelemetry.reg
     ping -n 3 127.0.0.1 >NUL
     goto start
-) else if "%inp%"=="9" (
+) else if "%inp%"=="8" (
     start files\10\DisableOfficeTelemetryTasks.bat
     ping -n 3 127.0.0.1 >NUL
     goto start
-) else if "%inp%"=="10" (
+) else if "%inp%"=="9" (
     start files\10\EnableGPeditinW10Home.bat
     ping -n 3 127.0.0.1 >NUL
     goto start
-) else if "%inp%"=="11" (
+) else if "%inp%"=="10" (
     start files\10\OneDrive_Uninstaller.bat
     ping -n 3 127.0.0.1 >NUL
     goto start
-) else if "%inp%"=="12" (
+) else if "%inp%"=="11" (
     start files\10\This_PC_-_Remove_3D_Objects_64-bit.reg
     ping -n 3 127.0.0.1 >NUL
     goto start
-) else if "%inp%"=="13" (
+) else if "%inp%"=="12" (
     start files\7\InstallTakeOwnership.reg
     ping -n 3 127.0.0.1 >NUL
     goto start
-) else if "%inp%"=="14" (
+) else if "%inp%"=="13" (
     start files\10\Activate_Windows_Old_Photo_Viewer_on_Windows_10.reg
     ping -n 3 127.0.0.1 >NUL
     goto start
-) else if "%inp%"=="15" (
+) else if "%inp%"=="14" (
     start %path_tf%\files\10\disable_update.bat
     goto start
-) else if "%inp%"=="16" (
+) else if "%inp%"=="15" (
     start files\10\enable_update.bat
     goto start
-) else if "%inp%"=="17" (
+) else if "%inp%"=="16" (
     start files\10\Disable_firewall_notifications.reg
     goto start
-) else if "%inp%"=="18" (
+) else if "%inp%"=="17" (
     start files\10\Enable_firewall_notifications.reg
     goto start
-) else if "%inp%"=="19" (
+) else if "%inp%"=="18" (
     start files\10\Disable_web_search.reg
     goto start
-) else if "%inp%"=="20" (
+) else if "%inp%"=="19" (
     start files\10\Enable_web_search.reg
     goto start
+) else if "%inp%"=="20" (
+    start files\10\Disable-windows-defender.reg
+    goto start
 ) else if "%inp%"=="21" (
-    start files\10\Remove_folders_from_this_pc.reg
+    start files\10\Enable-windows-defender.reg
     goto start
 ) else if "%inp%"=="22" (
+    start files\10\Remove_folders_from_this_pc.reg
+    goto start
+) else if "%inp%"=="23" (
     goto start
 ) else goto windows10
 
