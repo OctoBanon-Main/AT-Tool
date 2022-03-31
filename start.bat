@@ -277,7 +277,8 @@ if "%inp%"=="1" (
     start files\10\Remove_folders_from_this_pc.reg
     goto start
 ) else if "%inp%"=="23" (
-    start files\10\actvate.bat
+    start files\10\activate.bat
+    goto start
 ) else if "%inp%"=="24" (
     goto start
 ) else goto windows10
