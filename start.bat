@@ -193,7 +193,8 @@ echo [19] - Enable Web Search
 echo [20] - Disable Windows Defender
 echo [21] - Enable Windows Defender
 echo [22] - Remove all folder from This PC (Downloads and etc)
-echo [23] - Exit
+echo [23] - Activate Windows 10 LTSC
+echo [24] - Exit
 echo.
 set /p inp=">>> "
 if "%inp%"=="1" (
@@ -276,6 +277,8 @@ if "%inp%"=="1" (
     start files\10\Remove_folders_from_this_pc.reg
     goto start
 ) else if "%inp%"=="23" (
+    start files\10\actvate.bat
+) else if "%inp%"=="24" (
     goto start
 ) else goto windows10
 
